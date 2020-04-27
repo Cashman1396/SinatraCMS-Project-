@@ -1,4 +1,4 @@
-# SinatraMovieProject
+# SinatraCMSProject - Video Game Edition
 
 Introduction
 Sinatra CMS app for Movies and Movie Reviews
