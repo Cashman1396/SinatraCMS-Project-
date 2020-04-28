@@ -6,4 +6,4 @@ end
 
 run ApplicationController
 use UserController
-use GameController
+use VideoGameController

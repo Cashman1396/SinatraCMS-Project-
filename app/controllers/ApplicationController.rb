@@ -2,6 +2,7 @@ require './config/environment'
 
 class ApplicationController < Sinatra::Base
 
+  #enables sessions
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
