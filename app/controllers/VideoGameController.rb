@@ -3,7 +3,7 @@ class VideoGameController < ApplicationController
 
   get '/videogames' do
     @videogames = VideoGame.all
-    erb : 'videogames/index'
+    erb :'videogames/index'
   end
 
   #redirects to the new.erb after being logged in
@@ -31,7 +31,7 @@ class VideoGameController < ApplicationController
     if logged_in?
       @videogames = Videogames.find_by_slug(params[:slug])
 
-      erb: '/videogames/edit'
+      erb :'/videogames/edit'
     else
       redirect '/login'
     end
@@ -43,11 +43,8 @@ class VideoGameController < ApplicationController
     params.delete(:slug)
     videogames.update(params)
 
-    redirect 'videogames/#(games.sluggify)'
-  end
-
-  get '/videogames/:slug'
+    redirect "/videogames/#{videogames.sluggify}"
   end
 
 
-end 
+end
