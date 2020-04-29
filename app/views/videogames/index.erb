@@ -3,7 +3,9 @@
     <% @games.each do |game| %>
     <li><a href="/videogames/<%= game.sluggify %>"><%= game.title %></li>
     <%end%>
+    <br>
     <a href="/videogames/new">Add a Game</a>
+    <a href="/home">Your List</a>
     <br>
     <br>
     <form method="post" action="/logout">

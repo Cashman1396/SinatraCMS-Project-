@@ -24,6 +24,7 @@ class ApplicationController < Sinatra::Base
       end
   end
 
+
   #helpers added to find current user and session
   helpers do
       def logged_in?

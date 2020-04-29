@@ -4,13 +4,14 @@
 <br>
 <h3>Developed by <%= @game.developers %></h3>
 <br>
-<h3>Published by <%@game.publishers %></h4>
+<h3>Published by <%= @game.publishers %></h4>
 <% if @session[:user_id] == @game.user_id %>
 
 <a href="/videogames/new">Add a Game</a>
 
 <a href="/videogames/<%= @game.sluggify %>/edit">Edit Game</a>
 <% end %>
+<a href="/home">Your List</a>
 <a href="/videogames">All Games</a>
 <br>
 <br>
