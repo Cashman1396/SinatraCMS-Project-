@@ -1,16 +1,16 @@
 class UserController < ApplicationController
 
   get '/home' do
-    if logged_in?
-      @user = current_user
-    else
-      redirect '/'
-    end
-    erb :'user/index'
-  end
+     if logged_in?
+       @user = current_user
+     else
+       redirect '/'
+     end
+     erb :'users/index'
+   end
 
   get '/signup' do
-    erb :'user/signup'
+    erb :'users/sign_up'
   end
 
 
@@ -26,7 +26,7 @@ class UserController < ApplicationController
   end
 
   get '/login' do
-    erb :'user/login'
+    erb :'users/login'
   end
 
   #this creates the secure password by using the has_secure_password line in the model user.

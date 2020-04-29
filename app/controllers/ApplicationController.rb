@@ -7,7 +7,7 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    set :session_secret, "hidden secret"
+    set :session_secret, "super secret"
   end
 
   #this block for making sure the controller is working properly in shotgun. this will be commented out
@@ -26,9 +26,9 @@ class ApplicationController < Sinatra::Base
 
   #helpers added to find current user and session
   helpers do
-    def logged_in?
-      !!session[:user_id]
-    end
+      def logged_in?
+        !!session[:user_id]
+      end
 
     def current_user
       User.find(session[:user_id])

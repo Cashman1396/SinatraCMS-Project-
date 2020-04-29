@@ -1,4 +1,4 @@
-<h1>Welcom, <%= @user.username%></h1>
+<h1>Welcome, <%= @user.username%> </h1>
 
 <% if @user.games.length > 0 %>
   <ul>
@@ -11,7 +11,11 @@
   <% end %>
   <br>
   <a href="/videogames/new">Add a Game</a>
+  <br>
+  <br>
+  <a href="/videogames">All Games List</a>
+  <br>
+  <br>
   <form method ="post" action="/logout">
     <input type="submit" value="Log Out">
   </form>
-  <a href="/videogames">All Games List</a>

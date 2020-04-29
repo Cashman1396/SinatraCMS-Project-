@@ -2,7 +2,7 @@ class VideoGameController < ApplicationController
 
 
   get '/videogames' do
-    @games = Game.all
+    @videogames = VideoGame.all
     erb :'videogames/index'
   end
 
@@ -23,13 +23,15 @@ class VideoGameController < ApplicationController
     if params[:title].empty?
       redirect '/videogames/new'
     else
-      user.videogames.create[params]
+      user.videogames.create(params)
+
+      redirect '/videogames'
     end
   end
 
   get 'videogames/:slug/edit' do
     if logged_in?
-      @games = Games.find_by_slug(params[:slug])
+      @videogame = VideoGame.find_by_slug(params[:slug])
 
       erb :'/videogames/edit'
     else
@@ -39,23 +41,23 @@ class VideoGameController < ApplicationController
 
 
   post '/videogames/:slug/edit' do
-    videogames = videogames.find_by_slug(params[:slug])
+    videogame = VideoGame.find_by_slug(params[:slug])
     params.delete(:slug)
-    videogames.update(params)
+    videogame.update(params)
 
     redirect "/videogames/#{videogames.sluggify}"
   end
 
   get '/videogames/:slug' do
-    @games = Game.find_by_slug(params[:slug])
+    @videogame = VideoGame.find_by_slug(params[:slug])
     @session = session
 
     erb :'videogames/show'
   end
 
   post '/videogames/:slug/delete' do
-    game = Game.find_by_slug(params[:slug])
-    Game.delete(game.id)
+    videogame = VideoGame.find_by_slug(params[:slug])
+    VideoGame.delete(game.id)
 
     redirect '/videogames'
   end

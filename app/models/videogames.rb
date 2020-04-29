@@ -1,10 +1,10 @@
 require "pry"
-class VideoGame < ActiveRecord::Base
+class Game < ActiveRecord::Base
   belongs_to :user
 
   def self.find_by_slug(slug)
     title = slug.gsub("-", " ")
-    VideoGame.find_by(title: title)
+    Game.find_by(title: title)
   end
 
 

@@ -1,0 +1,7 @@
+<h1>Full Game List
+  <ul>
+    <% @games.each do |game| %>
+    <li><a href="/videogames/<%= game.sluggify %>"><%= game.title></li>
+    <%end%>
+  </ul>
+  
