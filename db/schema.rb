@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20200427164719) do
   create_table "games", force: :cascade do |t|
     t.string  "title"
     t.string  "developers"
+    t.string  "publishers"
     t.string  "genre"
     t.integer "user_id"
   end
