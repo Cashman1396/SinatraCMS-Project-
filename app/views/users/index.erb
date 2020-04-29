@@ -1,0 +1,17 @@
+<h1>Welcom, <%= @user.username%></h1>
+
+<% if @user.games.length > 0 %>
+  <ul>
+    <% @user.games.each do |game| %>
+    <li><a href="/videogames/<%= game.sluggify %>"><%= game.title %></li>
+      <% end %>
+    </ul>
+<% else %>
+  This game's list is empty  please add a game!
+  <% end %>
+  <br>
+  <a href="/videogames/new">Add a Game</a>
+  <form method ="post" action="/logout">
+    <input type="submit" value="Log Out">
+  </form>
+  <a href="/videogames">All Games List</a>

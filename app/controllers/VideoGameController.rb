@@ -60,6 +60,3 @@ class VideoGameController < ApplicationController
     redirect '/videogames'
   end
 end
-
-
-end

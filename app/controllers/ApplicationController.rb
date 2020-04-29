@@ -11,9 +11,9 @@ class ApplicationController < Sinatra::Base
   end
 
   #this block for making sure the controller is working properly in shotgun. this will be commented out
-  get '/home' do
-    "Hello World"
-  end
+  #get '/home' do
+    #"Hello World"
+  #end
 
   #redirects to index if session is empty
   get "/" do

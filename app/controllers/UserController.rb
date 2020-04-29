@@ -1,4 +1,5 @@
 class UserController < ApplicationController
+
   get '/home' do
     if logged_in?
       @user = current_user
@@ -46,10 +47,4 @@ class UserController < ApplicationController
 
     redirect '/'
   end
-end
-
-
-
-
-
 end

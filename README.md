@@ -5,7 +5,7 @@ Sinatra CMS app for Movies and Movie Reviews
 
 Installation
 
-1) Fork and clone repo to your locla machine
+1) Fork and clone repo to your local machine
 2) Use 'bundle install' to install your dependencies.
 
 Usage
