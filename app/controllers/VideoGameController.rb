@@ -2,7 +2,7 @@ class VideoGameController < ApplicationController
 
 
   get '/videogames' do
-    @videogames = VideoGame.all
+    @games = Game.all
     erb :'videogames/index'
   end
 
@@ -23,7 +23,7 @@ class VideoGameController < ApplicationController
     if params[:title].empty?
       redirect '/videogames/new'
     else
-      user.videogames.create(params)
+      user.games.create(params)
 
       redirect '/videogames'
     end
@@ -49,15 +49,15 @@ class VideoGameController < ApplicationController
   end
 
   get '/videogames/:slug' do
-    @videogame = VideoGame.find_by_slug(params[:slug])
+    @game = Game.find_by_slug(params[:slug])
     @session = session
 
     erb :'videogames/show'
   end
 
   post '/videogames/:slug/delete' do
-    videogame = VideoGame.find_by_slug(params[:slug])
-    VideoGame.delete(game.id)
+    game = Game.find_by_slug(params[:slug])
+    Game.delete(game.id)
 
     redirect '/videogames'
   end

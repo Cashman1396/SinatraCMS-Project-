@@ -1,7 +1,10 @@
 <h1>Full Game List
   <ul>
     <% @games.each do |game| %>
-    <li><a href="/videogames/<%= game.sluggify %>"><%= game.title></li>
+    <li><a href="/videogames/<%= game.sluggify %>"><%= game.title %></li>
     <%end%>
+    <a href="/videogames/new">Add a Game</a>
+    <form method="post" action="/logout">
+  <input type="submit" value="Log Out">
+</form>
   </ul>
-  
