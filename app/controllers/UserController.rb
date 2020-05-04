@@ -9,21 +9,24 @@ class UserController < ApplicationController
      erb :'users/index'
    end
 
+#redirets to the signup page
   get '/signup' do
     erb :'users/signup'
   end
 
-
+#gets the HTTP verb of post when signing up
   post '/signup' do
     user = User.create(params)
     session[:user_id] = user.id
 
+#saves user information
     if user.save
       redirect '/home'
     else
       redirect '/signup'
     end
   end
+
 
   get '/login' do
     erb :'users/login'
