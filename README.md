@@ -1,7 +1,7 @@
 # SinatraCMSProject - Video Game Edition
 
 Introduction
-Sinatra CMS app for Movies and Movie Reviews
+Sinatra CMS app for Video Games, but it is for anything you like
 
 Installation
 
