@@ -20,10 +20,10 @@ class UserController < ApplicationController
     session[:user_id] = user.id
 
 #saves user information
-    if user.save
-      redirect '/home'
-    else
+    if params[:email].empty? || params[:username].empty?
       redirect '/signup'
+    else
+      redirect '/home'
     end
   end
 

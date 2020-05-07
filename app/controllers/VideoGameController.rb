@@ -40,12 +40,13 @@ class VideoGameController < ApplicationController
   end
 
   #use patch or put
-  post '/videogames/:slug/edit' do
-    videogame = VideoGame.find_by_slug(params[:slug])
-    params.delete(:slug)
-    videogame.update(params)
+  patch '/videogames/:slug' do
+    @game = Game.find_by_slug(params[:slug])
+    @game.title = params[:title]
 
-    redirect "/videogames/#{videogames.sluggify}"
+
+
+    redirect "/videogames/#{@game.sluggify}"
   end
 
   get '/videogames/:slug' do
@@ -56,9 +57,9 @@ class VideoGameController < ApplicationController
   end
 
 #use delete verb
-  post '/videogames/:slug/delete' do
-    game = Game.find_by_slug(params[:slug])
-    Game.delete(game.id)
+  delete '/videogames/:slug' do
+    @game = Game.find_by_slug(params[:slug])
+    @game.delete
 
     redirect '/videogames'
   end

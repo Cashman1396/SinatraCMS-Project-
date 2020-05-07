@@ -1,4 +1,5 @@
-<form method="post" action="/videogames/<%= @game.sluggify %>/edit">
+<form method="post" action="/videogames/<%= @game.sluggify %>">
+  <input id="hidden" type="hidden" name="_method" value="patch">
   <input type="text" name="title" value="<%= @game.title %>">
   <input type="text" name="developers" value="<%= @game.developers %>">
   <input type="text" name="publishers" value="<%=@game.publishers %>">
