@@ -17,7 +17,7 @@ class VideoGameController < ApplicationController
   end
 
     #allows the current user to post to the new.erb
-  post '/videogames/new' do
+  post '/videogames' do
     #makes user equal to the current user signed in.
     user = current_user
     if params[:title].empty?
