@@ -1,7 +1,7 @@
 <form method="post" action="/videogames/<%= @game.sluggify %>/edit">
   <input type="text" name="title" value="<%= @game.title %>">
   <input type="text" name="developers" value="<%= @game.developers %>">
-  <input type="text" name="publishers" value="<%=@game.publishers">
+  <input type="text" name="publishers" value="<%=@game.publishers %>">
   <input type="text" name="genre" value="<%= @game.genre %>">
   <input type="submit" value="Edit">
 </form>

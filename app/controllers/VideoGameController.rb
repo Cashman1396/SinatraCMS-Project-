@@ -29,9 +29,9 @@ class VideoGameController < ApplicationController
     end
   end
 
-  get 'videogames/:slug/edit' do
+  get '/videogames/:slug/edit' do
     if logged_in?
-      @videogame = VideoGame.find_by_slug(params[:slug])
+      @game = Game.find_by_slug(params[:slug])
 
       erb :'/videogames/edit'
     else
@@ -39,7 +39,7 @@ class VideoGameController < ApplicationController
     end
   end
 
-
+  #use patch or put
   post '/videogames/:slug/edit' do
     videogame = VideoGame.find_by_slug(params[:slug])
     params.delete(:slug)
@@ -55,6 +55,7 @@ class VideoGameController < ApplicationController
     erb :'videogames/show'
   end
 
+#use delete verb
   post '/videogames/:slug/delete' do
     game = Game.find_by_slug(params[:slug])
     Game.delete(game.id)

@@ -7,6 +7,7 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
+    #for the cookies
     set :session_secret, "super secret"
   end
 
