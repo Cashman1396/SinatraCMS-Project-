@@ -42,6 +42,11 @@ class VideoGameController < ApplicationController
   #use patch or put
   patch '/videogames/:slug' do
     @game = Game.find_by_slug(params[:slug])
+    @game.title = params[:title]
+    @game.developers = params[:developers]
+    @game.publishers = params[:publishers]
+    @game.genre = params[:genre]
+    @game.save
 
     redirect "/videogames/#{@game.sluggify}"
   end
@@ -50,7 +55,7 @@ class VideoGameController < ApplicationController
     @game = Game.find_by_slug(params[:slug])
     @session = session
 
-    erb :'videogames/show'
+    erb :'/videogames/show'
   end
 
 #use delete verb
