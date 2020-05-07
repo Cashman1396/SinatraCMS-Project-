@@ -9,13 +9,12 @@
 
 <a href="/videogames/new">Add a Game</a>
 
-<a href="/videogames/<%= @game.sluggify %>">Edit Game</a>
+<a href="/videogames/<%= @game.sluggify %>/edit">Edit Game</a>
 <% end %>
 <a href="/home">Your List</a>
 <a href="/videogames">All Games</a>
 <br>
 <br>
-<form method="post" action="/videogames/<%= @game.sluggify %>">
-  <input id="hidden" type="hidden" name="_method" value="delete">
+<form method="post" action="/videogames/<%= @game.sluggify %>/delete">
   <input type="submit" value="Delete Game">
 </form>
