@@ -1,8 +1,15 @@
 <form method="post" action="/videogames/<%= @game.sluggify %>">
   <input id="hidden" type="hidden" name="_method" value="patch">
+  <label for="title"> Game Title:</label>
   <input type="text" name="title" value="<%= @game.title %>">
+  <br>
+  <label for="developers">Developers:</label>
   <input type="text" name="developers" value="<%= @game.developers %>">
+  <br>
+  <label for="publishers">Publishers:</label>
   <input type="text" name="publishers" value="<%=@game.publishers %>">
+  <br>
+  <label for="genre">Genre:</label>
   <input type="text" name="genre" value="<%= @game.genre %>">
   <input type="submit" value="Edit">
 </form>
