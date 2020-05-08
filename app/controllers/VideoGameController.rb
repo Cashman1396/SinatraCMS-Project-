@@ -42,13 +42,18 @@ class VideoGameController < ApplicationController
   #use patch or put
   patch '/videogames/:slug' do
     @game = Game.find_by_slug(params[:slug])
+  if @game.user_id == current_user.id
     @game.title = params[:title]
     @game.developers = params[:developers]
     @game.publishers = params[:publishers]
     @game.genre = params[:genre]
     @game.save
-
     redirect "/videogames/#{@game.sluggify}"
+  else
+    redirect '/home'
+  end
+
+
   end
 
   get '/videogames/:slug' do
@@ -61,8 +66,11 @@ class VideoGameController < ApplicationController
 #use delete verb
   delete '/videogames/:slug' do
     @game = Game.find_by_slug(params[:slug])
+    if @game.user == current_user
     @game.delete
-
     redirect '/videogames'
+  else
+    redirect '/home'
+    end
   end
 end
