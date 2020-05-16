@@ -1,7 +1,7 @@
 # SinatraCMSProject - Video Game Edition
 
-Introduction
-Sinatra CMS app for Video Games, but it is for anything you like
+Introduction 
+Sinatra CMS Application for Video Games, but it is for anything you like
 
 Installation
 
@@ -18,3 +18,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/Cashma
 
 License
 The project is available as open source under the terms of the MIT License.
+
